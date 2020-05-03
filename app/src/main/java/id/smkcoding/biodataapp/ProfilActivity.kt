@@ -31,6 +31,14 @@ class ProfilActivity : AppCompatActivity() {
         //memberi click listener ke tomboll call
         btnCall.setOnClickListener { dialPhoneNumber(txtTelp.text.toString()) }
 
+        btnAbout.setOnClickListener { navigasiKeAboutActivity() }
+
+
+    }
+
+    private fun navigasiKeAboutActivity() {
+        val intent = Intent(this, AboutActivity::class.java)
+        startActivity(intent)
 
     }
 
@@ -44,6 +52,7 @@ class ProfilActivity : AppCompatActivity() {
         val email = bundle.getString("email")
         val telp = bundle.getString("telp")
         val alamat = bundle.getString("alamat")
+        val umur = bundle.getString("umur")
 
         //set tulisan di tiap TextView dengan data yang kita dapatkan sebelumnya.
         txtName.text = nama
@@ -51,6 +60,7 @@ class ProfilActivity : AppCompatActivity() {
         txtEmail.text = email
         txtTelp.text = telp
         txtAddress.text = alamat
+        txtUmur.text = umur
 
     }
 

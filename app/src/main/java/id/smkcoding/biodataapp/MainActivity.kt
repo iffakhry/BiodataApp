@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private var telpInput : String = ""
     private var alamatInput : String = ""
     private var genderInput : String = ""
+    private var umurInput : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         telpInput = edtTelp.text.toString()
         alamatInput = edtAddress.text.toString()
         genderInput = spinnerGender.selectedItem.toString()
+        umurInput = edtUmur.text.toString()
 
         when{
             //cek di tiap inputan apakah kosong atau tidak, jika kosong maka tampilkan error
@@ -51,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             emailInput.isEmpty() -> edtEmail.error = "Email tidak boleh kosong"
             telpInput.isEmpty() -> edtTelp.error = "Telp tidak boleh kosong"
             alamatInput.isEmpty() -> edtAddress.error = "Alamat tidak boleh kosong"
+            umurInput.isEmpty() -> edtUmur.error = "Field Umur tidak boleh kosong"
 
             else -> {
                 //jika semua inputan telah diisi, maka jalankan method goToProfilActivity
@@ -75,6 +78,7 @@ class MainActivity : AppCompatActivity() {
         bundle.putString("email", emailInput)
         bundle.putString("telp", telpInput)
         bundle.putString("alamat", alamatInput)
+        bundle.putString("umur", umurInput)
 
         intent.putExtras(bundle)
 
